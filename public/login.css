@@ -1,5 +1,4 @@
 .wrapper{
-    position: absolute;
-    left: 50%;
-    background-color: aqua;
+   display: flex;
+   flex-direction: column;
 }

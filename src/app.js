@@ -4,7 +4,7 @@ const coll = connec.coll;
 const app = express();
 const path = require("path");
 const hbs = require("hbs");
-const templatePath = path.join(__dirname, '../template');
+const templatePath = path.join(__dirname, '../Template');
 const publicPath = path.join(__dirname, '../public'); 
 
 app.use(express.json());
