@@ -27,6 +27,8 @@ app.get("/login", (req, res) => {
 
 
 app.post("/signup", async (req, res) => {
+    console.log(coll);
+    console.log(connec);
     const data = {
         email: req.body.name,
         pswd: req.body.password
@@ -48,6 +50,8 @@ app.post("/login", async (req, res) => {
     }
 });
 
-app.listen(3000, () => {
-    console.log("Listening on port: http://localhost:3000");
-});
+
+export {app};
+// app.listen(3000, () => {
+//     console.log("Listening on port: http://localhost:3000");
+// });

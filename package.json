@@ -5,7 +5,8 @@
   "main": "src/app.js",
   "scripts": {
     "test": "nodemon app.js",
-    "build": "node app.js"
+    "build": "node app.js",
+    "vercel-build": "echo 'vercel-build'"
   },
   "keywords": [],
   "author": "",
