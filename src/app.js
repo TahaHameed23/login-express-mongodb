@@ -1,10 +1,13 @@
-const express = require("express");
-const connec = require('./conn.js');
+import express from "express";
+import { coll as connec } from "./conn.js";
 const coll = connec.coll;
 const app = express();
-const path = require("path");
-const hbs = require("hbs");
-const templatePath = path.join(__dirname, '../Template');
+import { fileURLToPath } from "url";
+import path from "path";
+
+const cuurentModuleUrl = import.meta.url;
+const __dirname = path.join(path.dirname(fileURLToPath(cuurentModuleUrl)));
+const templatePath = path.join(__dirname, '../public');
 const publicPath = path.join(__dirname, '../public'); 
 
 app.use(express.json());
@@ -52,6 +55,6 @@ app.post("/login", async (req, res) => {
 
 
 export {app};
-// app.listen(3000, () => {
-//     console.log("Listening on port: http://localhost:3000");
-// });
+app.listen(3000, () => {
+    console.log("Listening on port: http://localhost:3000");
+});

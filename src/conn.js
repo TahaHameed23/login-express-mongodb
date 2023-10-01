@@ -1,5 +1,5 @@
-const { MongoClient } = require("mongodb");
-const dotenv = require("dotenv")
+import { MongoClient } from "mongodb";
+import dotenv from "dotenv";
 dotenv.config();
 
 const uri = process.env.api_key;
@@ -12,13 +12,12 @@ const coll = database.collection("Cred");
 async function run() {
   try {
     await client.connect();
-  } finally {
     console.log('Done');
+  } finally {
   }
 }
 
 run().catch(console.dir);
 
-module.exports = 
-  {coll,}; // Export the collection object
+export { coll };
 
