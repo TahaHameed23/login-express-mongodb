@@ -9,7 +9,7 @@ const cuurentModuleUrl = import.meta.url;
 const __dirname = path.join(path.dirname(fileURLToPath(cuurentModuleUrl)));
 const templatePath = path.join(__dirname, '../public');
 const publicPath = path.join(__dirname, '../public'); 
-
+const port = process.env.PORT || 3000;
 app.use(express.json());
 app.set("view engine", "hbs");
 app.set("views", templatePath);
@@ -54,7 +54,8 @@ app.post("/login", async (req, res) => {
 });
 
 
-export {app};
-app.listen(3000, () => {
+app.listen(port, () => {
     console.log("Listening on port: http://localhost:3000");
 });
+export {app};
+
